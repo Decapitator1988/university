@@ -2,7 +2,7 @@
 <project version="4">
   <component name="DBNavigator.Project.DataEditorManager">
     <record-view-column-sorting-type value="BY_INDEX" />
-    <value-preview-text-wrapping value="true" />
+    <value-preview-text-wrapping value="false" />
     <value-preview-pinned value="false" />
   </component>
   <component name="DBNavigator.Project.DataExportManager">
@@ -23,15 +23,26 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes />
+    <loaded-nodes>
+      <connection connection-id="18d54e14-dc10-432d-9b09-ff264a7e5048">
+        <schema name="pg_catalog" object-types="column, constraint, function, table, view" />
+        <schema name="pg_temp_1" object-types="column" />
+        <schema name="pg_toast" object-types="column" />
+        <schema name="pg_toast_temp_1" object-types="column" />
+        <schema name="public" object-types="column, constraint, function, index, sequence, table, dataset trigger, view" />
+      </connection>
+    </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="18d54e14-dc10-432d-9b09-ff264a7e5048">
-      <console name="Connection" type="STANDARD" />
+      <console name="Connection" type="STANDARD"><![CDATA[select * from students;]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="18d54e14-dc10-432d-9b09-ff264a7e5048" />
+  </component>
+  <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-list connection-id="18d54e14-dc10-432d-9b09-ff264a7e5048" dataset="public.students" active-filter-id="" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
@@ -62,7 +73,7 @@
           <description value="" />
           <database-type value="POSTGRES" />
           <config-type value="BASIC" />
-          <database-version value="9999.0" />
+          <database-version value="9.6" />
           <driver-source value="BUILTIN" />
           <driver-library value="" />
           <driver value="" />
@@ -90,10 +101,9 @@
         </ssh-settings>
         <details>
           <charset value="UTF-8" />
-          <session-management value="true" />
           <ddl-file-binding value="true" />
           <database-logging value="false" />
-          <connect-automatically value="true" />
+          <connect-automatically value="false" />
           <restore-workspace value="true" />
           <restore-workspace-deep value="true" />
           <environment-type value="default" />
@@ -279,8 +289,6 @@
       <general>
         <show-object-navigation-gutter value="false" />
         <show-spec-declaration-navigation-gutter value="true" />
-        <enable-spellchecking value="true" />
-        <enable-reference-spellchecking value="false" />
       </general>
       <confirmations>
         <save-changes value="false" />
@@ -450,6 +458,7 @@
         <debug-execution-timeout value="600" />
         <focus-result value="false" />
         <prompt-execution value="false" />
+        <target-connection value="ASK" />
       </statement-execution>
       <script-execution>
         <command-line-interfaces />

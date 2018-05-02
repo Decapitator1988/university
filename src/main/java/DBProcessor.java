@@ -2,10 +2,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class DBProcesor {
+public class DBProcessor {
     private Connection connection;
 
-    public DBProcesor() {
+    public DBProcessor() {
         try{
             Class.forName("org.postgresql.Driver");
         } catch (ClassNotFoundException ex){
