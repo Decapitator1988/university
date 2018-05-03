@@ -23,15 +23,7 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes>
-      <connection connection-id="18d54e14-dc10-432d-9b09-ff264a7e5048">
-        <schema name="pg_catalog" object-types="column, constraint, function, table, view" />
-        <schema name="pg_temp_1" object-types="column" />
-        <schema name="pg_toast" object-types="column" />
-        <schema name="pg_toast_temp_1" object-types="column" />
-        <schema name="public" object-types="column, constraint, function, index, sequence, table, dataset trigger, view" />
-      </connection>
-    </loaded-nodes>
+    <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="18d54e14-dc10-432d-9b09-ff264a7e5048">
@@ -42,6 +34,11 @@
     <connection id="18d54e14-dc10-432d-9b09-ff264a7e5048" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-list connection-id="18d54e14-dc10-432d-9b09-ff264a7e5048" dataset="public.studentscourses" active-filter-id="54e34ad4-4c13-4a33-bf59-6a4450c2ad2f">
+      <filter id="54e34ad4-4c13-4a33-bf59-6a4450c2ad2f" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="courses_id" operator="=" value="" active="true" />
+      </filter>
+    </filter-list>
     <filter-list connection-id="18d54e14-dc10-432d-9b09-ff264a7e5048" dataset="public.students" active-filter-id="" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
@@ -101,6 +98,7 @@
         </ssh-settings>
         <details>
           <charset value="UTF-8" />
+          <session-management value="true" />
           <ddl-file-binding value="true" />
           <database-logging value="false" />
           <connect-automatically value="false" />
@@ -289,6 +287,8 @@
       <general>
         <show-object-navigation-gutter value="false" />
         <show-spec-declaration-navigation-gutter value="true" />
+        <enable-spellchecking value="true" />
+        <enable-reference-spellchecking value="false" />
       </general>
       <confirmations>
         <save-changes value="false" />
@@ -458,7 +458,6 @@
         <debug-execution-timeout value="600" />
         <focus-result value="false" />
         <prompt-execution value="false" />
-        <target-connection value="ASK" />
       </statement-execution>
       <script-execution>
         <command-line-interfaces />

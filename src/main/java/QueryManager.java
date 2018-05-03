@@ -45,7 +45,7 @@ public class QueryManager {
                         "STUDENT_ID SERIAL PRIMARY KEY," +
                         "GROUP_ID INT," +
                         "FIRST_NAME VARCHAR(255) NOT NULL," +
-                        "LAST_NAME VARCHAR(255) NOT NULL," +
+                        "LAST_NAME VARCHAR(255) UNIQUE NOT NULL," +
                         "FOREIGN KEY (GROUP_ID) REFERENCES GROUPS(GROUP_ID)" +
                         ");";
                 statement.execute(createStudentsTableQuery);
@@ -124,18 +124,32 @@ public class QueryManager {
             }
         }
     }
-//    public void createStudentsCoursesTable(){
-//        if (connection!=null){
-//            try (Statement statement = connection.createStatement()){
-//                String createStudentsCoursesTableQuery = "CREATE TABLE studentsCourses(" +
-//                        "STUDENT_ID INT REFERENCES students," +
-//                        "COURSES_ID INT REFERENCES courses," +
-//                        "PRIMARY KEY (STUDENT_ID, COURSES_ID)" +
-//                        ");";
-//                statement.execute(createStudentsCoursesTableQuery);
-//            } catch (SQLException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//    }
+    public void createStudentsCoursesTable(Connection connection){
+        if (connection!=null){
+            try (Statement statement = connection.createStatement()){
+                String createStudentsCoursesTableQuery = "CREATE TABLE studentsCourses(" +
+                        "STUDENT_ID INT NOT NULL," +
+                        "COURSES_ID INT NOT NULL," +
+                        "PRIMARY KEY (STUDENT_ID, COURSES_ID)," +
+                        "FOREIGN KEY (STUDENT_ID) REFERENCES students(student_id),"+
+                        "FOREIGN KEY (COURSES_ID) REFERENCES courses(course_id)"+
+                        ");";
+                statement.execute(createStudentsCoursesTableQuery);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    public void insertToStudentCoursesTable(int studentsId, int coursesId, Connection connection){
+        if (connection != null) {
+            try (Statement statement = connection.createStatement()) {
+                String insertToStudentCoursesTableQuery = "INSERT INTO studentscourses (" +
+                        "student_id, courses_id)" +
+                        "VALUES("+studentsId+", " + coursesId + ");";
+                statement.execute(insertToStudentCoursesTableQuery);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }
